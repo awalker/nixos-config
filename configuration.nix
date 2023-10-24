@@ -5,20 +5,57 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.overlays = [
+    (import "${builtins.fetchTarball https://github.com/vlaci/openconnect-sso/archive/master.tar.gz}/overlay.nix")
+  ];
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./unstable.nix
     ];
 
-  programs.hyprland.enable = true;
+  nixpkgs.config.permittedInsecurePackages = [
+     "python3.10-requests-2.28.2"
+     "python3.10-cryptography-40.0.1"
+  ];
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  nix.optimise.automatic = true;
+
+  programs.fish.enable = true;
+  programs.dconf.enable = true;
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  services.blueman.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "old-nuc-nixos"; # Define your hostname.
+  # services.xserver.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+
+  systemd = {
+	  user.services.polkit-gnome-authentication-agent-1 = {
+		  description = "polkit-gnome-authentication-agent-1";
+		  wantedBy = [ "graphical-session.target" ];
+		  wants = [ "graphical-session.target" ];
+		  after = [ "graphical-session.target" ];
+		  serviceConfig = {
+			  Type = "simple";
+			  ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+			  Restart = "on-failure";
+			  RestartSec = 1;
+			  TimeoutStopSec = 10;
+		  };
+	  };
+  };
+
+  networking.hostName = "odin"; # Define your hostname.
+  networking.openconnect.package = pkgs.unstable.openconnect;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -46,12 +83,28 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+  hardware.opengl.enable = true;
+
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
+  services.greetd = {
+    enable = true;
+    vt = 6;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu -r --time --cmd Hyprland";
+        user = "greeter";
+      };
+      # initial_session = default_session;
+    };
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -66,6 +119,7 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -85,6 +139,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.walke = {
     isNormalUser = true;
+    shell = pkgs.fish;
     description = "Adam Walker";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
@@ -100,7 +155,6 @@
       steam
       steam-run
       wlsunset
-      python39
       freshfetch
       starship
       networkmanagerapplet
@@ -109,8 +163,20 @@
       xfce.thunar
       ydotool
       eww
+      taskwarrior
+      tasksh
+      tunnelto
+      obsidian
     #  thunderbird
     ];
+  };
+
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    # Certain features, including CLI integration and system authentication support,
+    # require enabling PolKit integration on some desktop environments (e.g. Plasma).
+    polkitPolicyOwners = [ "walke" ];
   };
 
   # Allow unfree packages
@@ -120,17 +186,22 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
-    waybar
+    # waybar
+    (waybar.overrideAttrs (oldAttrs:{
+      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+    })
+    )
     lf
     exa
     zellij
-    rofi
+    rofi-wayland
     fish
     lazygit
+    libnotify
     dunst
     alacritty
-    kitty
-    go
+    # kitty
+    # go_1_21
     rustup
     gimp
     git
@@ -139,7 +210,6 @@
     zoxide
     nodejs_20
     wl-clipboard
-    nerdfonts
     bat
     du-dust
     bottom
@@ -147,12 +217,37 @@
     ripgrep-all
     fzf
     swww
-    networkmanager-openconnect
+    webkitgtk
+    # openconnect_unstable
+    openconnect-sso
+    vpnc-scripts
+    # gnome.networkmanager-openconnect
+    # gp-saml-gui
+    libnma
     wireplumber
     playerctl
     wlogout
+    killall
+    zig
+    # xdg-desktop-portal-gtk
+    ripgrep
+    greetd.tuigreet
+    polkit_gnome
+    gnome.gnome-keyring
+    gnome.adwaita-icon-theme
     # bluez
   ];
+
+    fonts.fonts = with pkgs; [
+    nerdfonts #.override { fonts = [ "DroidSansMono" ]; })
+    dejavu_fonts # mind the underscore! most of the packages are named with a hypen, not this one however
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+  ];
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
 
   programs.steam = {
     enable = true;
@@ -170,6 +265,11 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
+  system.autoUpgrade.enable = true;
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
