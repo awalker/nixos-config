@@ -172,6 +172,9 @@
       obsidian
       spotifyd
       godot_4
+			glow
+			gum
+			git-cliff
     #  thunderbird
     ];
   };
