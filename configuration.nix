@@ -2,7 +2,17 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, pkgs, ... }:
-
+let swayConfig = pkgs.writeText "greetd-sway-config" ''
+# `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
+exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+bindsym Mod4+shift+e exec swaynag \
+					-t warning \
+					-m 'What do you want to do?' \
+					-b 'Poweroff' 'systemctl poweroff' \
+					-b 'Reboot' 'systemctl reboot'
+					'';
+					in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -16,15 +26,45 @@
 		  '';
   };
 
-
   nixpkgs.config.permittedInsecurePackages = [
      "python3.10-requests-2.28.2"
      "python3.10-cryptography-40.0.1"
   ];
+	services.greetd = {
+		enable = true;
+		settings = {
+			default_session = {
+				command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
+			};
+		};
+	};
+
+	environment.etc."greetd/environments".text = ''
+		Hyprland
+		sway
+		fish
+		bash
+		'';
+	environment.etc."greetd/gtkgreet.css".text = ''
+		window {
+			background-color: #333;
+			background-image: url("file:///home/walke/wallpapers/minimalism-skull-robot-bird-wallpaper-250d311846234200af47898e02401791.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+
+	box#body {
+		background-color: rgba(50, 50, 50, 0.5);
+		border-radius: 10px;
+		padding: 50px;
+	}
+	'';
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+	programs.sway.enable = true;
   nix.optimise.automatic = true;
 
   programs.fish.enable = true;
@@ -97,17 +137,18 @@
   # Enable the KDE Plasma Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
-  services.greetd = {
-    enable = true;
-    vt = 6;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu -r --time --cmd Hyprland";
-        user = "greeter";
-      };
-      # initial_session = default_session;
-    };
-  };
+  # services.greetd = {
+  #   enable = true;
+  #   vt = 6;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu -r --time --cmd Hyprland";
+  #       user = "greeter";
+  #     };
+  #     # initial_session = default_session;
+  #   };
+  # };
+
 
   # Configure keymap in X11
   services.xserver = {
@@ -238,7 +279,7 @@
     zig
     # xdg-desktop-portal-gtk
     ripgrep
-    greetd.tuigreet
+    # greetd.tuigreet
     polkit_gnome
     gnome.gnome-keyring
     gnome.adwaita-icon-theme
