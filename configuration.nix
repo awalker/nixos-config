@@ -321,6 +321,7 @@ bindsym Mod4+shift+e exec swaynag \
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
+	security.pam.services.gtklock = {};
   system.autoUpgrade.enable = true;
 
 
