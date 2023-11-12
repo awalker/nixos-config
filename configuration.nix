@@ -287,6 +287,7 @@ bindsym Mod4+shift+e exec swaynag \
     openconnect
     libnma-gtk4
     gnome.networkmanager-openconnect
+		gtklock
     localsend
   ];
 
