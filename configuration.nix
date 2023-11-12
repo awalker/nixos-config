@@ -4,7 +4,7 @@
 { config, pkgs, ... }:
 let swayConfig = pkgs.writeText "greetd-sway-config" ''
 # `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
-exec "${pkgs.greetd.gtkgreet}/bin/gtkgreet -l; swaymsg exit"
+exec "${pkgs.greetd.regreet}/bin/regreet ; swaymsg exit"
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 bindsym Mod4+shift+e exec swaynag \
 					-t warning \
@@ -39,26 +39,6 @@ bindsym Mod4+shift+e exec swaynag \
 		};
 	};
 
-	environment.etc."greetd/environments".text = ''
-		Hyprland
-		sway
-		fish
-		bash
-		'';
-	environment.etc."greetd/gtkgreet.css".text = ''
-		window {
-			background-color: #333;
-			background-image: url("file:///home/walke/wallpapers/minimalism-skull-robot-bird-wallpaper-250d311846234200af47898e02401791.jpg");
-			background-size: cover;
-			background-position: center;
-		}
-
-	box#body {
-		background-color: rgba(50, 50, 50, 0.5);
-		border-radius: 10px;
-		padding: 50px;
-	}
-	'';
 
   programs.hyprland = {
     enable = true;
@@ -247,7 +227,7 @@ bindsym Mod4+shift+e exec swaynag \
     fish
     lazygit
     libnotify
-    dunst
+    swaynotificationcenter
     alacritty
     # kitty
     # go_1_21
