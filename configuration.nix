@@ -1,18 +1,21 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [
-    (import "${builtins.fetchTarball https://github.com/vlaci/openconnect-sso/archive/master.tar.gz}/overlay.nix")
-  ];
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./unstable.nix
     ];
+
+  nix = {
+	  package = pkgs.nixFlakes;
+	  extraOptions = ''
+		  experimental-features = nix-command flakes
+		  '';
+  };
+
 
   nixpkgs.config.permittedInsecurePackages = [
      "python3.10-requests-2.28.2"
@@ -167,6 +170,8 @@
       tasksh
       tunnelto
       obsidian
+      spotifyd
+      godot_4
     #  thunderbird
     ];
   };
@@ -192,7 +197,7 @@
     })
     )
     lf
-    exa
+    eza
     zellij
     rofi-wayland
     fish
@@ -214,12 +219,11 @@
     du-dust
     bottom
     htop
-    ripgrep-all
+    # ripgrep-all
     fzf
     swww
     webkitgtk
     # openconnect_unstable
-    openconnect-sso
     vpnc-scripts
     # gnome.networkmanager-openconnect
     # gp-saml-gui
@@ -235,10 +239,34 @@
     polkit_gnome
     gnome.gnome-keyring
     gnome.adwaita-icon-theme
+    docker
     # bluez
+    theme-obsidian2
+    juno-theme
+    papirus-icon-theme
+    oranchelo-icon-theme
+    numix-icon-theme
+    numix-cursor-theme
+    rose-pine-gtk-theme
+    pop-gtk-theme
+    pop-gtk-theme
+    omni-gtk-theme
+    fluent-gtk-theme
+    colloid-gtk-theme
+    gnome.adwaita-icon-theme
+    glib
+    nwg-look
+    gamescope
+    zip
+    unzip
+    go_1_21
+    openconnect
+    libnma-gtk4
+    gnome.networkmanager-openconnect
+    localsend
   ];
 
-    fonts.fonts = with pkgs; [
+    fonts.packages = with pkgs; [
     nerdfonts #.override { fonts = [ "DroidSansMono" ]; })
     dejavu_fonts # mind the underscore! most of the packages are named with a hypen, not this one however
     noto-fonts
