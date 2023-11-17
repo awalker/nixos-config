@@ -184,6 +184,7 @@ bindsym Mod4+shift+e exec swaynag \
       networkmanagerapplet
       networkmanager_dmenu
       grim
+			grimblast
       xfce.thunar
       ydotool
       eww
