@@ -187,39 +187,6 @@ bindsym Mod4+shift+e exec swaynag \
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
 			home-manager
-			nano
-      firefox
-      vivaldi
-      authy
-      kate
-      _1password-gui
-      _1password
-      syncthing
-      wezterm
-      bluetuith
-      steam
-      steam-run
-      wlsunset
-      freshfetch
-      starship
-      networkmanagerapplet
-      networkmanager_dmenu
-      grim
-			grimblast
-			imv
-      xfce.thunar
-      ydotool
-      eww
-      taskwarrior
-      tasksh
-      tunnelto
-      obsidian
-      spotifyd
-      godot_4
-			glow
-			gum
-			git-cliff
-    #  thunderbird
     ];
   };
 

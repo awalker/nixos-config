@@ -30,54 +30,38 @@
 
     packages = with pkgs; [
       home-manager
-
-      # Terminal 
-      htop
-      ripgrep
-      fzf
-      fd
-      wget
-      curl
-      ncdu
-      tree
-      hexyl
-      zoxide
-      bat
-      lsd
-      neofetch
-      xclip
-      scrot
-      feh
-
-      # Communication
-      # zoom-us
-      teams
-      tdesktop
-      # slack
-      # signal-desktop
-      # discord
-
-      # Video/Audio
-      feh # Image Viewer
-      mpv # Media Player
-      vlc # Media Player
-
-      # File Management
-      ranger
-      rsync
-      unzip # Zip Files
-      unrar # Rar Files
-
-      # Misc Apps
-      killall
-      appimage-run # Runs AppImages on NixOS
-      veracrypt
-
-      # Misc
-      qgroundcontrol
+			nano
+      firefox
+      vivaldi
+      authy
+      kate
+      _1password-gui
+      _1password
+      syncthing
+      wezterm
+      bluetuith
+      steam
+      steam-run
+      wlsunset
+      freshfetch
+      starship
+      networkmanagerapplet
+      networkmanager_dmenu
+      grim
+			grimblast
+			imv
+      xfce.thunar
+      ydotool
+      eww
+      taskwarrior
+      tasksh
+      tunnelto
       obsidian
-      # qjackctl
-      libnotify
+      spotifyd
+      godot_4
+			glow
+			gum
+			git-cliff
     ];
     stateVersion = "23.05";
   };
