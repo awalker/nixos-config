@@ -26,6 +26,7 @@ bindsym Mod4+shift+e exec swaynag \
 		  experimental-features = nix-command flakes
 		  '';
   };
+	# programs.home-manager.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
      "python3.10-requests-2.28.2"
@@ -50,6 +51,10 @@ bindsym Mod4+shift+e exec swaynag \
 		defaultEditor = true;
 		viAlias = true;
 		vimAlias = true;
+		# plugins = [
+		# 	pkgs.vimPlugins.nvim-treesitter
+		# 	pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+		# ];
 		#configure = {
 			#customRC = (lib.fileContents ../.dotfiles/nvim/init.lua);
 			#packages.myVimPackage = with pkgs.vimPlugins; {
@@ -181,6 +186,8 @@ bindsym Mod4+shift+e exec swaynag \
     description = "Adam Walker";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+			home-manager
+			nano
       firefox
       vivaldi
       authy
@@ -216,6 +223,7 @@ bindsym Mod4+shift+e exec swaynag \
     ];
   };
 
+	# programs.home-manager.enable = true;
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
@@ -304,6 +312,7 @@ bindsym Mod4+shift+e exec swaynag \
     gnome.networkmanager-openconnect
 		gtklock
     localsend
+		helix
   ];
 
     fonts.packages = with pkgs; [
