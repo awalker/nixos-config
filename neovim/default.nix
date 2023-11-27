@@ -64,13 +64,16 @@
 				pkgs.vimPlugins.null-ls-nvim
 				pkgs.vimPlugins.dressing-nvim
 				pkgs.vimPlugins.which-key-nvim
+				pkgs.vimPlugins.crates-nvim
+				pkgs.vimPlugins.rust-tools-nvim
+				# pkgs.vimPlugins.inlay-hints-nvim
+				pkgs.vimPlugins.catppuccin-nvim
+				pkgs.vimPlugins.neodev-nvim
 				pkgs.vimPlugins.nvim-notify
+				pkgs.vimPlugins.mini-nvim
+				pkgs.vimPlugins.comment-nvim
 
-				# 'simrat39/rust-tools.nvim',
-				# 'folke/neodev.nvim',
 				# 'saecki/crates.nvim',
-				# 'EdenEast/nightfox.nvim',
-				# 'catppuccin/nvim',
 				# 'numToStr/Comment.nvim'
 				# 'kevinhwang91/nvim-bqf',
 				# 'ribelo/taskwarrior.nvim',
@@ -80,26 +83,32 @@
 			];
       extraConfig = ''
         lua << EOF
-        ${builtins.readFile config/mappings.lua}
         ${builtins.readFile config/options.lua}
+        ${builtins.readFile config/mappings.lua}
+        ${builtins.readFile config/cmp.lua}
+        ${builtins.readFile config/treesitter.lua}
+        ${builtins.readFile config/lspconfig.lua}
+        ${builtins.readFile config/luasnip.lua}
+        ${builtins.readFile config/trouble.lua}
+        ${builtins.readFile config/telescope.lua}
+        ${builtins.readFile config/lualine.lua}
+        ${builtins.readFile config/fidget.lua}
+        ${builtins.readFile config/gitsigns.lua}
+        ${builtins.readFile config/filetree.lua}
+        ${builtins.readFile config/banner.lua}
+				-- The line beneath this is called `modeline`. See `:help modeline`
+				-- vim: syntax=lua ts=2 sts=2 sw=2 et
       '';
-        # ${builtins.readFile config/setup/cmp.lua}
-        # ${builtins.readFile config/setup/treesitter.lua}
-        # ${builtins.readFile config/setup/lspconfig.lua}
-        # ${builtins.readFile config/setup/luasnip.lua}
-        # ${builtins.readFile config/setup/trouble.lua}
-        # ${builtins.readFile config/setup/telescope.lua}
-        # ${builtins.readFile config/setup/kommentary.lua}
-        # ${builtins.readFile config/setup/lualine.lua}
-        # ${builtins.readFile config/setup/fidget.lua}
-        # ${builtins.readFile config/setup/lint.lua}
-        # ${builtins.readFile config/setup/leap.lua}
-        # ${builtins.readFile config/setup/gitsigns.lua}
-        # ${builtins.readFile config/setup/clangd_extensions.lua}
-        # ${builtins.readFile config/setup/dap.lua}
+        # ${builtins.readFile config/kommentary.lua}
+        # ${builtins.readFile config/lint.lua}
+        # ${builtins.readFile config/leap.lua}
+        # ${builtins.readFile config/clangd_extensions.lua}
+        # ${builtins.readFile config/dap.lua}
+        # ${builtins.readFile config/indent-blankline.lua}
       enable = true;
       viAlias = true;
       vimAlias = true;
     };
   };
 }
+        #touch config/cmp.lua config/treesitter.lua config/lspconfig.lua config/luasnip.lua config/trouble.lua config/telescope.lua config/lualine.lua config/fidget.lua config/gitsigns.lua
