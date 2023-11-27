@@ -53,8 +53,31 @@
         pkgs.vimPlugins.nvim-dap
         pkgs.vimPlugins.nvim-dap-ui
         pkgs.vimPlugins.nvim-dap-virtual-text
-      ];
 
+				pkgs.vimPlugins.mason-nvim
+				pkgs.vimPlugins.mason-lspconfig-nvim
+				pkgs.vimPlugins.nui-nvim
+				pkgs.vimPlugins.neo-tree-nvim
+				pkgs.vimPlugins.go-nvim
+				pkgs.vimPlugins.indent-blankline-nvim
+				pkgs.vimPlugins.persistence-nvim
+				pkgs.vimPlugins.null-ls-nvim
+				pkgs.vimPlugins.dressing-nvim
+				pkgs.vimPlugins.which-key-nvim
+				pkgs.vimPlugins.nvim-notify
+
+				# 'simrat39/rust-tools.nvim',
+				# 'folke/neodev.nvim',
+				# 'saecki/crates.nvim',
+				# 'EdenEast/nightfox.nvim',
+				# 'catppuccin/nvim',
+				# 'numToStr/Comment.nvim'
+				# 'kevinhwang91/nvim-bqf',
+				# 'ribelo/taskwarrior.nvim',
+				# 'simrat39/inlay-hints.nvim',
+				# "jackMort/ChatGPT.nvim",
+				# 'olexsmir/gopher.nvim',
+			];
       extraConfig = ''
         lua << EOF
         ${builtins.readFile config/mappings.lua}
