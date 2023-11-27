@@ -17,6 +17,7 @@ bindsym Mod4+shift+e exec swaynag \
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+			# <home-manager/nixos>
     ];
 
   nix = {
@@ -44,6 +45,19 @@ bindsym Mod4+shift+e exec swaynag \
     enable = true;
     xwayland.enable = true;
   };
+	programs.neovim = {
+		enable = true;
+		defaultEditor = true;
+		viAlias = true;
+		vimAlias = true;
+		#configure = {
+			#customRC = (lib.fileContents ../.dotfiles/nvim/init.lua);
+			#packages.myVimPackage = with pkgs.vimPlugins; {
+				#start = [ nvim-treesitter.withAllGrammars ];
+				#opt = [ ];
+			#};
+		#};
+	};
 	programs.sway.enable = true;
   nix.optimise.automatic = true;
 
@@ -216,7 +230,6 @@ bindsym Mod4+shift+e exec swaynag \
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
     # waybar
     (waybar.overrideAttrs (oldAttrs:{
       mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
