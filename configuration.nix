@@ -41,7 +41,7 @@ bindsym Mod4+shift+e exec swaynag \
 		};
 	};
 
-
+	virtualisation.docker.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -184,7 +184,7 @@ bindsym Mod4+shift+e exec swaynag \
     isNormalUser = true;
     shell = pkgs.fish;
     description = "Adam Walker";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
 			home-manager
     ];
