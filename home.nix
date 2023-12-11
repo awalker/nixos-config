@@ -64,6 +64,7 @@
 			git-cliff
       nodePackages_latest.typescript-language-server
       just
+      watchexec
     ];
     stateVersion = "23.05";
   };
