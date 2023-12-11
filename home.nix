@@ -62,6 +62,8 @@
 			glow
 			gum
 			git-cliff
+      nodePackages_latest.typescript-language-server
+      just
     ];
     stateVersion = "23.05";
   };
