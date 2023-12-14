@@ -63,6 +63,7 @@
 			gum
 			git-cliff
       nodePackages_latest.typescript-language-server
+      nodePackages_latest.svelte-language-server
       just
       watchexec
     ];
