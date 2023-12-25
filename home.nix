@@ -66,6 +66,8 @@
       nodePackages_latest.svelte-language-server
       just
       watchexec
+      spotify
+      gh
     ];
     stateVersion = "23.05";
   };
