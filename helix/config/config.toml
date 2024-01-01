@@ -31,8 +31,8 @@ mode.select = "SELECT"
 
 [keys.normal."space"]
 "space" = "file_picker_in_current_directory"
-"l" = ":sh zellij run -c -- lazygit"
-"j" = ":sh zellij run -c -- just --choose"
+"l" = ":sh zellij run -f -c -n LazyGit -- lazygit"
+"j" = ":sh zellij run -c -n Just -- just --choose"
 
 #[keys.normal."space"."c"]
 #"i" = ":toggle-option editor.lsp.display-inlay-hints"
