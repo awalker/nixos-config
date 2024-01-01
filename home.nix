@@ -68,6 +68,7 @@
       watchexec
       spotify
       gh
+      nil
     ];
     stateVersion = "23.05";
   };
