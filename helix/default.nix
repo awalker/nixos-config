@@ -21,17 +21,9 @@
   ];
   programs = {
     helix = {
-      plugins = [
-        # pkgs.vimPlugins.nvim-treesitter
-      ];
-      # extraConfig = ''
-      #           lua << EOF
-      #           ${builtins.readFile config/config.toml}
-      #           ${builtins.readFile config/languages.toml}
-      # '';
       enable = true;
-      xdg.configFile."helix/config.toml".source = ./config/config.toml;
-      xdg.configFile."helix/languages.toml".source = ./config/languages.toml;
     };
   };
+  xdg.configFile."helix/config.toml".source = ./config/config.toml;
+  xdg.configFile."helix/languages.toml".source = ./config/languages.toml;
 }
