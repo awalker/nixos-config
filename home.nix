@@ -5,19 +5,19 @@
 , ...
 }: {
   imports = [ (import ./neovim) ];
-    # ++ [ (import ../modules/dev/git) ]
-    # ++ [ (import ../modules/dev/kitty) ]
-    # ++ [ (import ../modules/dev/starship) ]
-    # ++ [ (import ../modules/dev/tmux) ]
-    # ++ [ (import ../modules/dev/zsh) ]
-    # ++ [ (import ../modules/desktop/bspwm) ]
-    # ++ [ (import ../modules/desktop/sxhkd) ]
-    # ++ [ (import ../modules/desktop/polybar) ]
-    # ++ [ (import ../modules/desktop/rofi) ]
-    # ++ [ (import ../modules/desktop/picom) ]
-    # ++ [ (import ../modules/desktop/dunst) ]
-    # ++ [ (import ../modules/desktop/betterlockscreen) ]
-    # ++ [ (import ../modules/apps/firefox) ];
+  # ++ [ (import ../modules/dev/git) ]
+  # ++ [ (import ../modules/dev/kitty) ]
+  # ++ [ (import ../modules/dev/starship) ]
+  # ++ [ (import ../modules/dev/tmux) ]
+  # ++ [ (import ../modules/dev/zsh) ]
+  # ++ [ (import ../modules/desktop/bspwm) ]
+  # ++ [ (import ../modules/desktop/sxhkd) ]
+  # ++ [ (import ../modules/desktop/polybar) ]
+  # ++ [ (import ../modules/desktop/rofi) ]
+  # ++ [ (import ../modules/desktop/picom) ]
+  # ++ [ (import ../modules/desktop/dunst) ]
+  # ++ [ (import ../modules/desktop/betterlockscreen) ]
+  # ++ [ (import ../modules/apps/firefox) ];
 
   programs.home-manager.enable = true;
   # xdg.configFile."wallpapers".source = ../assets/wallpapers;
@@ -30,7 +30,7 @@
 
     packages = with pkgs; [
       home-manager
-			nano
+      nano
       firefox
       vivaldi
       authy
@@ -48,8 +48,8 @@
       networkmanagerapplet
       networkmanager_dmenu
       grim
-			grimblast
-			imv
+      grimblast
+      imv
       xfce.thunar
       ydotool
       eww
@@ -59,9 +59,9 @@
       obsidian
       spotifyd
       godot_4
-			glow
-			gum
-			git-cliff
+      glow
+      gum
+      git-cliff
       nodePackages_latest.typescript-language-server
       nodePackages_latest.svelte-language-server
       just

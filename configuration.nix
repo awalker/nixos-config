@@ -2,68 +2,70 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, pkgs, ... }:
-let swayConfig = pkgs.writeText "greetd-sway-config" ''
-# `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
-exec "${pkgs.greetd.regreet}/bin/regreet ; swaymsg exit"
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-bindsym Mod4+shift+e exec swaynag \
-					-t warning \
-					-m 'What do you want to do?' \
-					-b 'Poweroff' 'systemctl poweroff' \
-					-b 'Reboot' 'systemctl reboot'
-					'';
-					in
+let
+  swayConfig = pkgs.writeText "greetd-sway-config" ''
+    # `-l` activates layer-shell mode. Notice that `swaymsg exit` will run after gtkgreet.
+    exec "${pkgs.greetd.regreet}/bin/regreet ; swaymsg exit"
+    exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+    bindsym Mod4+shift+e exec swaynag \
+    					-t warning \
+    					-m 'What do you want to do?' \
+    					-b 'Poweroff' 'systemctl poweroff' \
+    					-b 'Reboot' 'systemctl reboot'
+    					'';
+in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
-			# <home-manager/nixos>
+      # <home-manager/nixos>
     ];
 
   nix = {
-	  package = pkgs.nixFlakes;
-	  extraOptions = ''
-		  experimental-features = nix-command flakes
-		  '';
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      		  experimental-features = nix-command flakes
+      		  '';
   };
-	# programs.home-manager.enable = true;
+  # programs.home-manager.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-     "python3.10-requests-2.28.2"
-     "python3.10-cryptography-40.0.1"
+    "python3.10-requests-2.28.2"
+    "python3.10-cryptography-40.0.1"
   ];
-	services.greetd = {
-		enable = true;
-		settings = {
-			default_session = {
-				command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
-			};
-		};
-	};
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
+      };
+    };
+  };
 
-	virtualisation.docker.enable = true;
+  virtualisation.docker.enable = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
-	programs.neovim = {
-		enable = true;
-		defaultEditor = true;
-		viAlias = true;
-		vimAlias = true;
-		# plugins = [
-		# 	pkgs.vimPlugins.nvim-treesitter
-		# 	pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-		# ];
-		#configure = {
-			#customRC = (lib.fileContents ../.dotfiles/nvim/init.lua);
-			#packages.myVimPackage = with pkgs.vimPlugins; {
-				#start = [ nvim-treesitter.withAllGrammars ];
-				#opt = [ ];
-			#};
-		#};
-	};
-	programs.sway.enable = true;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    # plugins = [
+    # 	pkgs.vimPlugins.nvim-treesitter
+    # 	pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    # ];
+    #configure = {
+    #customRC = (lib.fileContents ../.dotfiles/nvim/init.lua);
+    #packages.myVimPackage = with pkgs.vimPlugins; {
+    #start = [ nvim-treesitter.withAllGrammars ];
+    #opt = [ ];
+    #};
+    #};
+  };
+  programs.sway.enable = true;
   nix.optimise.automatic = true;
 
   programs.fish.enable = true;
@@ -81,19 +83,19 @@ bindsym Mod4+shift+e exec swaynag \
   # services.xserver.desktopManager.gnome.enable = true;
 
   systemd = {
-	  user.services.polkit-gnome-authentication-agent-1 = {
-		  description = "polkit-gnome-authentication-agent-1";
-		  wantedBy = [ "graphical-session.target" ];
-		  wants = [ "graphical-session.target" ];
-		  after = [ "graphical-session.target" ];
-		  serviceConfig = {
-			  Type = "simple";
-			  ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-			  Restart = "on-failure";
-			  RestartSec = 1;
-			  TimeoutStopSec = 10;
-		  };
-	  };
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
   };
 
   networking.hostName = "odin"; # Define your hostname.
@@ -186,11 +188,11 @@ bindsym Mod4+shift+e exec swaynag \
     description = "Adam Walker";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
-			home-manager
+      home-manager
     ];
   };
 
-	# programs.home-manager.enable = true;
+  # programs.home-manager.enable = true;
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
@@ -206,8 +208,8 @@ bindsym Mod4+shift+e exec swaynag \
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # waybar
-    (waybar.overrideAttrs (oldAttrs:{
-      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+    (waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     })
     )
     lf
@@ -277,12 +279,12 @@ bindsym Mod4+shift+e exec swaynag \
     openconnect
     libnma-gtk4
     gnome.networkmanager-openconnect
-		gtklock
+    gtklock
     localsend
-		helix
+    helix
   ];
 
-    fonts.packages = with pkgs; [
+  fonts.packages = with pkgs; [
     nerdfonts #.override { fonts = [ "DroidSansMono" ]; })
     dejavu_fonts # mind the underscore! most of the packages are named with a hypen, not this one however
     noto-fonts
@@ -312,7 +314,7 @@ bindsym Mod4+shift+e exec swaynag \
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
-	security.pam.services.gtklock = {};
+  security.pam.services.gtklock = { };
   system.autoUpgrade.enable = true;
 
 
