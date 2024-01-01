@@ -69,6 +69,7 @@
       spotify
       gh
       nil
+      nixpkgs-fmt
     ];
     stateVersion = "23.05";
   };
