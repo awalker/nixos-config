@@ -281,7 +281,6 @@ in
     gnome.networkmanager-openconnect
     gtklock
     localsend
-    helix
   ];
 
   fonts.packages = with pkgs; [

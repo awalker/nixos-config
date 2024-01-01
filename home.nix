@@ -4,7 +4,8 @@
 , user
 , ...
 }: {
-  imports = [ (import ./neovim) ];
+  imports = [ (import ./neovim) ]
+    ++ [ (import ./helix) ];
   # ++ [ (import ../modules/dev/git) ]
   # ++ [ (import ../modules/dev/kitty) ]
   # ++ [ (import ../modules/dev/starship) ]
@@ -62,14 +63,10 @@
       glow
       gum
       git-cliff
-      nodePackages_latest.typescript-language-server
-      nodePackages_latest.svelte-language-server
       just
       watchexec
       spotify
       gh
-      nil
-      nixpkgs-fmt
     ];
     stateVersion = "23.05";
   };

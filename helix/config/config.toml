@@ -1,0 +1,48 @@
+theme = "catppuccin_macchiato"
+
+[editor]
+line-number = "relative"
+cursorline = true
+
+[editor.lsp]
+display-messages = true
+# From docs: You may also have to activate them in the LSP config for them to appear, not just in Helix. 
+# Inlay hints in Helix are still being improved on and may be a little bit laggy/janky under some 
+# circumstances, please report any bugs you see so we can fix them!
+# AW: I may want a key to toggle this.
+display-inlay-hints = true
+# snippets already enabled? YNO rust snippets?
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.normal]
+"{" = ["goto_prev_paragraph", "collapse_selection"]
+"}" = ["goto_next_paragraph", "collapse_selection"]
+
+[keys.normal."space"]
+"space" = "file_picker_in_current_directory"
+"l" = ":sh zellij run -c -- lazygit"
+"j" = ":sh zellij run -c -- just --choose"
+
+#[keys.normal."space"."c"]
+#"i" = ":toggle-option editor.lsp.display-inlay-hints"
+
+[keys.normal."+"]
+c = ":run-shell-command cargo build"
+t = ":run-shell-command cargo test"
+g = ":run-shell-command lazygit"
+
+[keys.select]
+# Muscle memory
+"{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
+"}" = ["extend_to_line_bounds", "goto_next_paragraph"]
