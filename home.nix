@@ -67,6 +67,7 @@
       watchexec
       spotify
       gh
+      git-sync
     ];
     stateVersion = "23.05";
   };
