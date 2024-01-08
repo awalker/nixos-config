@@ -68,6 +68,7 @@
       spotify
       gh
       git-sync
+      msmtp
     ];
     stateVersion = "23.05";
   };
