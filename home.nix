@@ -69,6 +69,7 @@
       gh
       git-sync
       msmtp
+      zls
     ];
     stateVersion = "23.05";
   };
