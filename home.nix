@@ -70,6 +70,7 @@
       git-sync
       msmtp
       zls
+      udiskie
     ];
     stateVersion = "23.05";
   };
