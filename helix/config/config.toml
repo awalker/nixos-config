@@ -28,6 +28,7 @@ mode.select = "SELECT"
 [keys.normal]
 "{" = ["goto_prev_paragraph", "collapse_selection"]
 "}" = ["goto_next_paragraph", "collapse_selection"]
+"shift-enter" = ["goto_line_end", ":append-output echo -n ';'"]
 
 [keys.normal."space"]
 "space" = "file_picker_in_current_directory"
