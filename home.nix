@@ -71,6 +71,8 @@
       msmtp
       zls
       udiskie
+      odin
+      ols
     ];
     stateVersion = "23.05";
   };

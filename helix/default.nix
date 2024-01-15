@@ -13,6 +13,11 @@
     # js/ts etc
     nodePackages_latest.typescript-language-server
     nodePackages_latest.svelte-language-server
+    vscode-langservers-extracted
+    dockerfile-language-server-nodejs
+    nodePackages_latest.bash-language-server
+
+    marksman
 
     # extra go servers installed via go install
     # golangci-lint
