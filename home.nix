@@ -73,6 +73,7 @@
       udiskie
       odin
       ols
+      prusa-slicer
     ];
     stateVersion = "23.05";
   };
