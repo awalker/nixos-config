@@ -74,6 +74,7 @@
       odin
       ols
       prusa-slicer
+      vit
     ];
     stateVersion = "23.05";
   };
