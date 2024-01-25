@@ -75,6 +75,7 @@
       ols
       prusa-slicer
       vit
+      go-task
     ];
     stateVersion = "23.05";
   };
