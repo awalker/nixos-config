@@ -75,6 +75,7 @@
       ols
       prusa-slicer
       vit
+      todo-txt-cli
     ];
     stateVersion = "23.05";
   };
