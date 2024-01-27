@@ -76,6 +76,7 @@
       prusa-slicer
       vit
       todo-txt-cli
+      socat
     ];
     stateVersion = "23.05";
   };
