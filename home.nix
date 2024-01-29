@@ -77,6 +77,7 @@
       vit
       todo-txt-cli
       socat
+      pulsemixer
     ];
     stateVersion = "23.05";
   };
