@@ -33,6 +33,9 @@ command = "typos-lsp"
 [language-server.ltex]
 command = "ltex-ls"
 
+[language-server.ltex.config.ltex.dictionary]
+"en-US" = ["mine"]
+
 [language-server.gopls.config.hints]
 assignVariableTypes = true
 compositeLiteralFields = true
