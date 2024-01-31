@@ -10,9 +10,13 @@ file-types = ["go"]
 roots = ["go.work", "go.mod"]
 auto-format = true
 comment-token = "//"
-language-servers = [ "gopls","golangci-lint-lsp"]
+language-servers = [ "gopls","golangci-lint-lsp", "typos"]
 # TODO: gopls needs utf-8 offsets?
 indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "typos"]
 
 [language-server.golangci-lint-lsp]
 command = "golangci-lint-langserver"
@@ -22,6 +26,9 @@ command = ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1
 
 [language-server.gopls]
 command = "gopls"
+
+[language-server.typos]
+command = "typos-lsp"
 
 [language-server.gopls.config.hints]
 assignVariableTypes = true
