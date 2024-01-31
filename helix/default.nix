@@ -18,6 +18,7 @@
     nodePackages_latest.bash-language-server
 
     marksman
+    ltex-ls
 
     # extra go servers installed via go install
     # golangci-lint
