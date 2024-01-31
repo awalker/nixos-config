@@ -1,6 +1,11 @@
 [[language]]
 name = "svelte"
 auto-format = true
+language-servers = ["svelteserver", "typos"]
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "typos"]
 
 [[language]]
 name = "go"
@@ -10,7 +15,7 @@ file-types = ["go"]
 roots = ["go.work", "go.mod"]
 auto-format = true
 comment-token = "//"
-language-servers = [ "gopls","golangci-lint-lsp", "ltex"]
+language-servers = [ "gopls","golangci-lint-lsp", "typos"]
 # TODO: gopls needs utf-8 offsets?
 indent = { tab-width = 4, unit = "\t" }
 
