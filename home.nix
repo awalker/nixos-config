@@ -37,7 +37,6 @@
       vivaldi
       authy
       kate
-      synthing
       _1password-gui
       _1password
       wezterm
