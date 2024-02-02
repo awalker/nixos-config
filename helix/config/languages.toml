@@ -20,6 +20,10 @@ language-servers = [ "gopls","golangci-lint-lsp", "typos"]
 indent = { tab-width = 4, unit = "\t" }
 
 [[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
 name = "markdown"
 language-servers = ["marksman", "ltex"]
 
