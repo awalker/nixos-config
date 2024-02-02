@@ -21,6 +21,9 @@
     ltex-ls
     tailwindcss-language-server
     taplo
+    lua-language-server
+    nodePackages_latest.prisma
+    yaml-language-server
 
     # extra go servers installed via go install
     # golangci-lint
