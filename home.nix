@@ -24,6 +24,15 @@
   # xdg.configFile."wallpapers".source = ../assets/wallpapers;
   # xdg.configFile."bin".source = ../dots/bin;
 
+  services = {
+    syncthing = {
+        enable = true;
+        user = "walke";
+        dataDir = "/home/walke/Documents";    # Default folder for new synced folders
+        configDir = "/home/walke/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
+};
+
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
@@ -38,7 +47,6 @@
       kate
       _1password-gui
       _1password
-      syncthing
       wezterm
       bluetuith
       steam
