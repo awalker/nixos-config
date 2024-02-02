@@ -19,6 +19,7 @@
 
     marksman
     ltex-ls
+    tailwindcss-language-server
 
     # extra go servers installed via go install
     # golangci-lint

@@ -1,7 +1,7 @@
 [[language]]
 name = "svelte"
 auto-format = true
-language-servers = ["svelteserver", "typos"]
+language-servers = ["svelteserver", "tailwindcss-ls", "typos"]
 
 [[language]]
 name = "typescript"
@@ -40,6 +40,9 @@ command = "ltex-ls"
 
 [language-server.ltex.config.ltex.dictionary]
 "en-US" = ["mine"]
+
+# [language-server.tailwindcss-ls]
+# config = { userLanguages = { rust = "html", "*.rs" = "html" } }
 
 [language-server.gopls.config.hints]
 assignVariableTypes = true
