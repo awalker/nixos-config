@@ -45,6 +45,14 @@ in
   services.devmon.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
+  services = {
+    syncthing = {
+        enable = true;
+        user = "walke";
+        dataDir = "/home/walke/Documents";    # Default folder for new synced folders
+        configDir = "/home/walke/.config/syncthing";   # Folder for Syncthing's settings and keys
+    };
+};
 
   virtualisation.docker.enable = true;
   programs.hyprland = {
