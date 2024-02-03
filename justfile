@@ -3,3 +3,4 @@ switch:
 	sudo nixos-rebuild  --flake .#odin switch
 update:
 	sudo nix-channel --update
+	sudo nix flake update
