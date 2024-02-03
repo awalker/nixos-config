@@ -145,6 +145,7 @@ keymap = [
 	{ on = [ "g", "d" ],       exec = "cd ~/Downloads",   desc = "Go to the downloads directory" },
 	{ on = [ "g", "t" ],       exec = "cd /tmp",          desc = "Go to the temporary directory" },
 	{ on = [ "g", "s" ],       exec = "cd ~/src",         desc = "Go to the source directory" },
+	{ on = [ "g", "w" ],       exec = "cd ~/wallpapers",  desc = "Go to the wallpapers directory" },
 	{ on = [ "g", "<Space>" ], exec = "cd --interactive", desc = "Go to a directory interactively" },
   { on = [ "W"], exec = "shell --confirm 'swww img \"$1\" --transition-type center'", desc="Set wallpaper"},
 
