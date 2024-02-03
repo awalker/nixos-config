@@ -57,7 +57,7 @@
       taskwarrior
       tasksh
       tunnelto
-      obsidian
+      # obsidian
       spotifyd
       godot_4
       glow
