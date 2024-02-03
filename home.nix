@@ -40,7 +40,6 @@
       kate
       _1password-gui
       _1password
-      wezterm
       bluetuith
       steam
       steam-run
@@ -79,6 +78,7 @@
       todo-txt-cli
       socat
       pulsemixer
+      wezterm
     ];
     stateVersion = "23.05";
   };
