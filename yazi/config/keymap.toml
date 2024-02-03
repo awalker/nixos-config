@@ -144,11 +144,13 @@ keymap = [
 	{ on = [ "g", "c" ],       exec = "cd ~/.config",     desc = "Go to the config directory" },
 	{ on = [ "g", "d" ],       exec = "cd ~/Downloads",   desc = "Go to the downloads directory" },
 	{ on = [ "g", "t" ],       exec = "cd /tmp",          desc = "Go to the temporary directory" },
+	{ on = [ "g", "s" ],       exec = "cd ~/src",         desc = "Go to the source directory" },
 	{ on = [ "g", "<Space>" ], exec = "cd --interactive", desc = "Go to a directory interactively" },
-  { on = [ "W"], exec = "shell --confirm 'swww img $1 --transition-type center'", desc="Set wallpaper"},
+  { on = [ "W"], exec = "shell --confirm 'swww img \"$1\" --transition-type center'", desc="Set wallpaper"},
 
 	# Help
 	{ on = [ "~" ], exec = "help", desc = "Open help" },
+	{ on = [ "<F1>" ], exec = "help", desc = "Open help" },
 ]
 
 [tasks]
