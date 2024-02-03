@@ -37,4 +37,5 @@
   };
   xdg.configFile."helix/config.toml".source = ./config/config.toml;
   xdg.configFile."helix/languages.toml".source = ./config/languages.toml;
+  xdg.configFile."helix/themes/my-tokyo.toml".source = ./config/my-tokyo.toml;
 }
