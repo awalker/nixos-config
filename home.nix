@@ -5,7 +5,8 @@
 , ...
 }: {
   imports = [ (import ./neovim) ]
-    ++ [ (import ./helix) ];
+    ++ [ (import ./helix) ]
+    ++ [ (import ./yazi) ];
   # ++ [ (import ../modules/dev/git) ]
   # ++ [ (import ../modules/dev/kitty) ]
   # ++ [ (import ../modules/dev/starship) ]
