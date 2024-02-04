@@ -45,8 +45,8 @@ A-g = ":toggle-option indent-guides.render"
 
 [keys.normal."space"]
 "space" = "file_picker_in_current_directory"
-"l" = ":sh zellij run -f -c -n LazyGit -- lazygit"
-"j" = ":sh zellij run -c -n Just -- just --choose"
+"l" = ":sh newpane lazygit"
+"j" = ":sh newpane just --choose"
 
 #[keys.normal."space"."c"]
 #"i" = ":toggle-option editor.lsp.display-inlay-hints"
