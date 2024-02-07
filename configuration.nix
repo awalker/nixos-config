@@ -274,6 +274,7 @@ in
     oranchelo-icon-theme
     numix-icon-theme
     numix-cursor-theme
+    catppuccin-cursors
     rose-pine-gtk-theme
     pop-gtk-theme
     pop-gtk-theme

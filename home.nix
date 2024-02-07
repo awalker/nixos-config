@@ -79,6 +79,7 @@
       socat
       pulsemixer
       wezterm
+      river
     ];
     stateVersion = "23.05";
   };
