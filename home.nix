@@ -80,6 +80,7 @@
       pulsemixer
       wezterm
       river
+      wob
     ];
     stateVersion = "23.05";
   };
