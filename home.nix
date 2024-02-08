@@ -81,6 +81,7 @@
       wezterm
       river
       wob
+      avizo
     ];
     stateVersion = "23.05";
   };
