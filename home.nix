@@ -107,6 +107,7 @@
       river
       wob
       avizo
+      capitaine-cursors
     ];
     stateVersion = "23.05";
   };
