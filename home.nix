@@ -25,22 +25,24 @@
   # xdg.configFile."wallpapers".source = ../assets/wallpapers;
   # xdg.configFile."bin".source = ../dots/bin;
 
-   gtk.enable = true;
+  gtk.enable = true;
   gtk.font.name = "Noto Sans";
   gtk.font.package = pkgs.noto-fonts;
-  gtk.theme.name = "Dracula";
-  gtk.theme.package = pkgs.dracula-theme;
-  gtk.iconTheme.name = "Papirus-Dark-Maia";  # Candy and Tela also look good
+  # gtk.theme.name = "Dracula";
+  # gtk.theme.package = pkgs.dracula-theme;
+  gtk.theme.package = pkgs.gnome.gnome-themes-extra;
+  gtk.theme.name = "Adwaita-dark";
+  gtk.iconTheme.name = "Papirus-Dark-Maia"; # Candy and Tela also look good
   gtk.iconTheme.package = pkgs.papirus-maia-icon-theme;
   gtk.gtk3.extraConfig = {
     gtk-application-prefer-dark-theme = true;
     # gtk-key-theme-name    = "Emacs";
-    gtk-icon-theme-name   = "Papirus-Dark-Maia";
+    gtk-icon-theme-name = "Papirus-Dark-Maia";
     gtk-cursor-theme-name = "capitaine-cursors";
   };
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-    #   gtk-key-theme = "Emacs";
+      #   gtk-key-theme = "Emacs";
       cursor-theme = "Capitaine Cursors";
     };
   };
