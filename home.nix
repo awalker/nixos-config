@@ -57,6 +57,7 @@
 
     packages = with pkgs; [
       home-manager
+      dconf
       nano
       firefox
       vivaldi
