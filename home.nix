@@ -44,12 +44,11 @@
       gtk-icon-theme-name = "Papirus-Dark-Maia";
       gtk-cursor-theme-name = "capitaine-cursors";
     };
-    dconf.settings = {
-      "org/gnome/desktop/interface" = {
-        # gtk-key-theme = "Emacs";
-        cursor-theme = "Capitaine Cursors";
-      };
-    };
+    # dconf.settings = {
+    #   "org/gnome/desktop/interface" = {
+    #     cursor-theme = "Capitaine Cursors";
+    #   };
+    # };
     xdg.systemDirs.data = [
       "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
       "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}"
