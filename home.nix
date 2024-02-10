@@ -113,7 +113,7 @@
       (pkgs.runCommandLocal "capitaine-cursors-fix" { } ''
         dir=$out/share/icons
         mkdir -p $dir
-        ln -s ${capitaine-cursors}/share/icons/capitaine_cursors $dir/default
+        ln -s ${capitaine-cursors}/share/icons/capitaine-cursors $dir/default
       '')
     ];
     stateVersion = "23.05";
