@@ -98,8 +98,8 @@
       msmtp
       zls
       udiskie
-      odin
-      ols
+      # odin
+      # ols
       prusa-slicer
       vit
       todo-txt-cli
