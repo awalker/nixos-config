@@ -147,7 +147,7 @@ keymap = [
 	{ on = [ "g", "s" ],       exec = "cd ~/src",         desc = "Go to the source directory" },
 	{ on = [ "g", "w" ],       exec = "cd ~/wallpapers",  desc = "Go to the wallpapers directory" },
 	{ on = [ "g", "<Space>" ], exec = "cd --interactive", desc = "Go to a directory interactively" },
-  { on = [ "W"], exec = "shell --confirm 'swww img \"$1\"", desc="Set wallpaper"},
+  { on = [ "W"], exec = "shell --confirm 'swww img \"$1\"'", desc="Set wallpaper"},
 
 	# Help
 	{ on = [ "~" ], exec = "help", desc = "Open help" },
