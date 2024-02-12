@@ -109,6 +109,7 @@
       river
       wob
       avizo
+      ironbar
       capitaine-cursors
       (pkgs.runCommandLocal "capitaine-cursors-fix" { } ''
         dir=$out/share/icons
