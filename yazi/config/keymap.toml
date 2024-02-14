@@ -148,6 +148,7 @@ keymap = [
 	{ on = [ "g", "w" ],       exec = "cd ~/wallpapers",  desc = "Go to the wallpapers directory" },
 	{ on = [ "g", "<Space>" ], exec = "cd --interactive", desc = "Go to a directory interactively" },
   { on = [ "W"], exec = "shell --confirm 'swww img \"$1\"'", desc="Set wallpaper"},
+  { on = [ "Q"], exec = "shell --confirm 'unzip \"$1\" -d \"$(basename \\\"$1\\\" .zip)\"'", desc="Unzip"},
 
 	# Help
 	{ on = [ "~" ], exec = "help", desc = "Open help" },

@@ -109,6 +109,7 @@
       river
       wob
       avizo
+      unar
       ironbar
       capitaine-cursors
       (pkgs.runCommandLocal "capitaine-cursors-fix" { } ''
