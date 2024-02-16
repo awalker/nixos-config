@@ -111,6 +111,7 @@
       avizo
       unar
       ironbar
+      orca-slicer
       capitaine-cursors
       (pkgs.runCommandLocal "capitaine-cursors-fix" { } ''
         dir=$out/share/icons
