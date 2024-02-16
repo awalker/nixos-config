@@ -89,6 +89,7 @@
       godot_4
       glow
       gum
+      catppuccin-gtk
       git-cliff
       just
       watchexec
