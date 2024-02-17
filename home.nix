@@ -113,6 +113,7 @@
       unar
       ironbar
       orca-slicer
+      mpv
       capitaine-cursors
       (pkgs.runCommandLocal "capitaine-cursors-fix" { } ''
         dir=$out/share/icons
