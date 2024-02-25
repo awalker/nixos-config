@@ -115,6 +115,7 @@
       orca-slicer
       mpv
       capitaine-cursors
+      prismlauncher
       (pkgs.runCommandLocal "capitaine-cursors-fix" { } ''
         dir=$out/share/icons
         mkdir -p $dir
