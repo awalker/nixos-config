@@ -80,7 +80,7 @@
       imv
       xfce.thunar
       ydotool
-      eww-wayland
+      eww
       taskwarrior
       tasksh
       tunnelto
