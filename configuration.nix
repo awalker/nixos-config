@@ -287,7 +287,7 @@ in
     gamescope
     zip
     unzip
-    go_1_21
+    go_1_22
     openconnect
     libnma-gtk4
     gnome.networkmanager-openconnect
