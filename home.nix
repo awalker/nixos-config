@@ -116,6 +116,7 @@
       mpv
       capitaine-cursors
       gleam
+      erlang
       prismlauncher
       (pkgs.runCommandLocal "capitaine-cursors-fix" { } ''
         dir=$out/share/icons
