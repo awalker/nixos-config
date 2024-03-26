@@ -124,6 +124,7 @@
         ln -s ${capitaine-cursors}/share/icons/capitaine-cursors-white $dir/default
       '')
       lm_sensors
+      dune3d
     ];
     stateVersion = "23.05";
   };
