@@ -125,6 +125,7 @@
       '')
       lm_sensors
       dune3d
+      plasticity
     ];
     stateVersion = "23.05";
   };
