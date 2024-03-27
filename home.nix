@@ -126,12 +126,6 @@
       lm_sensors
       dune3d
       lsof
-      esptool
-      python3
-      python311Packages.serialio
-      arduino-ide
-      screen
-      tio
       #"github:mirrexagon/nixpkgs-esp-dev#esp32-id"
     ];
     stateVersion = "23.05";
