@@ -126,6 +126,7 @@
       lm_sensors
       dune3d
       lsof
+      python3
       arduino-ide
       screen
       tio
