@@ -126,6 +126,7 @@
       lm_sensors
       dune3d
       lsof
+      esptool
       python3
       arduino-ide
       screen
