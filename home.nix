@@ -128,7 +128,7 @@
       lsof
       esptool
       python3
-      python311Packages.pyserial
+      python311Packages.serialio
       arduino-ide
       screen
       tio
