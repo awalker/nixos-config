@@ -126,7 +126,6 @@
       lm_sensors
       dune3d
       lsof
-      teams
       #"github:mirrexagon/nixpkgs-esp-dev#esp32-id"
     ];
     stateVersion = "23.05";
