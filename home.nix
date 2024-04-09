@@ -127,6 +127,7 @@
       dune3d
       lsof
       google-chrome
+      dbeaver
       #"github:mirrexagon/nixpkgs-esp-dev#esp32-id"
     ];
     stateVersion = "23.05";
