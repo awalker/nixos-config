@@ -112,7 +112,7 @@
       avizo
       unar
       ironbar
-      #orca-slicer
+      orca-slicer
       mpv
       capitaine-cursors
       gleam

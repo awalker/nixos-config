@@ -13,9 +13,6 @@ let
     					-b 'Poweroff' 'systemctl poweroff' \
     					-b 'Reboot' 'systemctl reboot'
     					'';
-    nixpkgs-orca = import (/home/walke/nixpkgs) { 
-    config.allowUnfree = true;
-  };
 in
 {
   imports =
@@ -301,7 +298,6 @@ in
     gnome.networkmanager-openconnect
     gtklock
     localsend
-    nixpkgs-orca.orca-slicer
   ];
 
   fonts.packages = with pkgs; [
