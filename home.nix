@@ -81,7 +81,7 @@
       xfce.thunar
       ydotool
       eww
-      taskwarrior
+      taskwarrior3
       tasksh
       tunnelto
       # obsidian
