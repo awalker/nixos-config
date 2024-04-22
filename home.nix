@@ -34,6 +34,30 @@
     #   bash.enable = true;
     fish = {
       enable = true;
+      plugins = [
+        {
+          name = "jorgebucaran/fisher";
+          src = pkgs.fetchFromGitHub {
+            owner = "jorgebucaran";
+            repo = "fisher";
+          };
+        }
+        {
+          name = "TSFoster/posix-source";
+          src = pkgs.fetchFromGitHub {
+            owner = "TSFoster";
+            repo = "posix-source";
+          };
+        }
+        {
+          name = "danhper/fish-ssh-agent";
+          src = pkgs.fetchFromGitHub {
+            owner = "danhper";
+            repo = "fish-ssh-agent";
+          };
+        }
+
+      ];
     };
   };
 
@@ -69,10 +93,10 @@
     homeDirectory = "/home/${user}";
     sessionPath = [ "/home/${user}/.config/bin" ];
 
-    files.".config/fish" = {
-      source = ./fish;
-      recursive = true;
-    };
+    # home.files.".config/fish" = {
+    #   source = ./fish;
+    #   recursive = true;
+    # };
 
     packages = with pkgs; [
       home-manager
