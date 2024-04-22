@@ -41,7 +41,7 @@
             owner = "jorgebucaran";
             repo = "fisher";
             rev = "2efd33ccd0777ece3f58895a093f32932bd377b6";
-            ssh256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLs=";
+            sha256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLs=";
           };
         }
         {
