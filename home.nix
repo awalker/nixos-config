@@ -35,7 +35,7 @@
     fish = {
       enable = true;
       functions = {
-          gc = builtins.readFile fish/functions/gc.fish;
+          gc = "${builtins.readFile fish/functions/gc.fish}";
       };
     };
   };
