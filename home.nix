@@ -25,15 +25,20 @@
   # xdg.configFile."wallpapers".source = ../assets/wallpapers;
   # xdg.configFile."bin".source = ../dots/bin;
 
-  # programs = {
+  programs = {
   #   direnv = {
   #     enable = true;
   #     enableBashIntegration = true;
   #     nix-direnv.enable = true;
   #   };
   #   bash.enable = true;
-  #   fish.enable = true;
-  # };
+    fish = {
+      enable = true;
+      functions = {
+          gc = builtins.readFile fish/functions/gc.fish;
+      };
+    };
+  };
 
   gtk.enable = true;
   gtk.font.name = "Noto Sans";
