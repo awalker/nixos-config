@@ -26,17 +26,14 @@
   # xdg.configFile."bin".source = ../dots/bin;
 
   programs = {
-  #   direnv = {
-  #     enable = true;
-  #     enableBashIntegration = true;
-  #     nix-direnv.enable = true;
-  #   };
-  #   bash.enable = true;
+    #   direnv = {
+    #     enable = true;
+    #     enableBashIntegration = true;
+    #     nix-direnv.enable = true;
+    #   };
+    #   bash.enable = true;
     fish = {
       enable = true;
-      functions = {
-          gc = ''${builtins.readFile fish/functions/gc.fish}'';
-      };
     };
   };
 
@@ -71,6 +68,11 @@
     username = "${user}";
     homeDirectory = "/home/${user}";
     sessionPath = [ "/home/${user}/.config/bin" ];
+
+    files.".config/fish" = {
+      source = ./fish;
+      recursive = true;
+    };
 
     packages = with pkgs; [
       home-manager
