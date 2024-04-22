@@ -40,6 +40,7 @@
           src = pkgs.fetchFromGitHub {
             owner = "jorgebucaran";
             repo = "fisher";
+            rev = "2efd33c";
           };
         }
         {
@@ -47,6 +48,7 @@
           src = pkgs.fetchFromGitHub {
             owner = "TSFoster";
             repo = "posix-source";
+            rev = "ae6703fc5abb8aee154d77b67c0408375690bcaf";
           };
         }
         {
@@ -54,6 +56,7 @@
           src = pkgs.fetchFromGitHub {
             owner = "danhper";
             repo = "fish-ssh-agent";
+            rev = "fd70a2afdd03caf9bf609746bf6b993b9e83be57";
           };
         }
 
