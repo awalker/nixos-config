@@ -32,8 +32,36 @@
     #     nix-direnv.enable = true;
     #   };
     #   bash.enable = true;
+    eza = {
+      enableFishIntegration = true;
+      enable = true;
+    };
+    starship = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    fzf.enableFishIntegration = true;
+    zoxide.enableFishIntegration = true;
+    zellij.enableFishIntegration = true;
     fish = {
       enable = true;
+      shellAbbrs = {
+        tunto = "tunnelto -s adamwalker -v --dashboard-port 3001 --host 127.0.0.1 -p 8090";
+      };
+      shellInit = ''
+set -gx PATH "$HOME/.local/bin" "$HOME/go/bin" $PATH
+set -gx EDITOR hx
+function fish_greeting
+    freshfetch
+end
+
+if not pgrep --full ssh-agent | string collect >/dev/null
+    eval (ssh-agent -c)
+    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+    set -Ux SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
+end
+
+      '';
       plugins = [
         {
           name = "jorgebucaran/fisher";
@@ -41,6 +69,7 @@
             owner = "jorgebucaran";
             repo = "fisher";
             rev = "2efd33ccd0777ece3f58895a093f32932bd377b6";
+            sha256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLs=";
           };
         }
         {
@@ -49,6 +78,7 @@
             owner = "TSFoster";
             repo = "posix-source";
             rev = "ae6703fc5abb8aee154d77b67c0408375690bcaf";
+            sha256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLs=";
           };
         }
         {
