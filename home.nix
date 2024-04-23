@@ -26,11 +26,12 @@
   # xdg.configFile."bin".source = ../dots/bin;
 
   programs = {
-    #   direnv = {
-    #     enable = true;
-    #     enableBashIntegration = true;
-    #     nix-direnv.enable = true;
-    #   };
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      #     enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
     #   bash.enable = true;
     eza = {
       enableFishIntegration = true;
@@ -49,17 +50,17 @@
         tunto = "tunnelto -s adamwalker -v --dashboard-port 3001 --host 127.0.0.1 -p 8090";
       };
       shellInit = ''
-set -gx PATH "$HOME/.local/bin" "$HOME/go/bin" $PATH
-set -gx EDITOR hx
-function fish_greeting
-    freshfetch
-end
+        set -gx PATH "$HOME/.local/bin" "$HOME/go/bin" $PATH
+        set -gx EDITOR hx
+        function fish_greeting
+            freshfetch
+        end
 
-if not pgrep --full ssh-agent | string collect >/dev/null
-    eval (ssh-agent -c)
-    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-    set -Ux SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
-end
+        if not pgrep --full ssh-agent | string collect >/dev/null
+            eval (ssh-agent -c)
+            set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+            set -Ux SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
+        end
 
       '';
       plugins = [
