@@ -41,7 +41,10 @@
       enableFishIntegration = true;
     };
     fzf.enableFishIntegration = true;
-    zoxide.enableFishIntegration = true;
+    zoxide = {
+      enableFishIntegration = true;
+      enable = true;
+    };
     zellij.enableFishIntegration = true;
     fish = {
       enable = true;
