@@ -15,6 +15,9 @@ let
     					'';
 in
 {
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   imports =
     [
       # Include the results of the hardware scan.
@@ -216,9 +219,6 @@ in
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
     polkitPolicyOwners = [ "walke" ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
