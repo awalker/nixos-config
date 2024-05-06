@@ -90,7 +90,7 @@
             owner = "danhper";
             repo = "fish-ssh-agent";
             rev = "fd70a2afdd03caf9bf609746bf6b993b9e83be57";
-            sha256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLs=";
+            sha256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLS=";
           };
         }
 
@@ -141,7 +141,6 @@
       nano
       firefox
       vivaldi
-      authy
       kate
       _1password-gui
       _1password
