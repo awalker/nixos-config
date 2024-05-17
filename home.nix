@@ -59,11 +59,11 @@
         end
 
         if not pgrep --full ssh-agent | string collect >/dev/null
-            set -e SSH_AGENT_PID
-            set -e SSH_AUTH_SOCK
+            # set -e SSH_AGENT_PID
+            # set -e SSH_AUTH_SOCK
             eval (ssh-agent -c)
-            set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-            set -Ux SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
+            # set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+            # set -Ux SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
         end
 
       '';
