@@ -327,6 +327,8 @@ in
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  # programs.ssh.enable = true;
+  programs.ssh.startAgent = true;
 
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.greetd.enableGnomeKeyring = true;
