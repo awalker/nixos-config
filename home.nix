@@ -22,8 +22,6 @@
   # ++ [ (import ../modules/apps/firefox) ];
 
   programs.home-manager.enable = true;
-  programs.ssh.enable = true;
-  programs.ssh.startAgent = true;
   # security.pam.sshAgentAuth.enable = true;
   # xdg.configFile."wallpapers".source = ../assets/wallpapers;
   # xdg.configFile."bin".source = ../dots/bin;
