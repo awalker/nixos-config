@@ -22,6 +22,7 @@
   # ++ [ (import ../modules/apps/firefox) ];
 
   programs.home-manager.enable = true;
+  programs.ssh.startAgent = true;
   # xdg.configFile."wallpapers".source = ../assets/wallpapers;
   # xdg.configFile."bin".source = ../dots/bin;
 
@@ -58,13 +59,15 @@
             freshfetch
         end
 
-        if not pgrep --full ssh-agent | string collect >/dev/null
+        set -Ux SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent
+
+        # if not pgrep --full ssh-agent | string collect >/dev/null
             # set -e SSH_AGENT_PID
             # set -e SSH_AUTH_SOCK
-            eval (ssh-agent -c)
+            # eval (ssh-agent -c)
             # set -Ux SSH_AGENT_PID $SSH_AGENT_PID
             # set -Ux SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gcr/ssh
-        end
+        # end
 
       '';
       plugins = [
