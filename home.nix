@@ -72,7 +72,7 @@
             owner = "jorgebucaran";
             repo = "fisher";
             rev = "2efd33ccd0777ece3f58895a093f32932bd377b6";
-            sha256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLs=";
+            sha256 = "lnfq4A0Rjzc8KLmyrWNSJZsJaGAFUrLJ3q/NlvRLD1U=";
           };
         }
         {
@@ -81,7 +81,7 @@
             owner = "TSFoster";
             repo = "posix-source";
             rev = "ae6703fc5abb8aee154d77b67c0408375690bcaf";
-            sha256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLs=";
+            sha256 = "lnfq4A0Rjzc8KLmyrWNSJZsJaGAFUrLJ3q/NlvRLD1U=";
           };
         }
         {
@@ -90,7 +90,7 @@
             owner = "danhper";
             repo = "fish-ssh-agent";
             rev = "fd70a2afdd03caf9bf609746bf6b993b9e83be57";
-            sha256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLS=";
+            sha256 = "e94Sd1GSUAxwLVVo5yR6msq0jZLOn2m+JZJ6mvwQdLs=";
           };
         }
 
