@@ -209,7 +209,7 @@
       dune3d
       lsof
       google-chrome
-      dbeaver
+      dbeaver-bin
       timewarrior
       #"github:mirrexagon/nixpkgs-esp-dev#esp32-id"
     ];
