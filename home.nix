@@ -108,7 +108,7 @@
   gtk.font.package = pkgs.noto-fonts;
   # gtk.theme.name = "Dracula";
   # gtk.theme.package = pkgs.dracula-theme;
-  gtk.theme.package = pkgs.gnome.gnome-themes-extra;
+  gtk.theme.package = pkgs.gnome-themes-extra;
   gtk.theme.name = "Adwaita-dark";
   gtk.iconTheme.name = "Papirus-Dark-Maia"; # Candy and Tela also look good
   gtk.iconTheme.package = pkgs.papirus-maia-icon-theme;

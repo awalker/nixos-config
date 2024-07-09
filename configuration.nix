@@ -150,7 +150,7 @@ in
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
@@ -270,8 +270,8 @@ in
     ripgrep
     # greetd.tuigreet
     polkit_gnome
-    gnome.gnome-keyring
-    gnome.adwaita-icon-theme
+    gnome-keyring
+    adwaita-icon-theme
     docker
     # bluez
     theme-obsidian2
@@ -287,7 +287,6 @@ in
     omni-gtk-theme
     fluent-gtk-theme
     colloid-gtk-theme
-    gnome.adwaita-icon-theme
     glib
     nwg-look
     gamescope
