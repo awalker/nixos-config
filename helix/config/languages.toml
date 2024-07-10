@@ -3,9 +3,9 @@ name = "svelte"
 auto-format = true
 language-servers = ["svelteserver", "tailwindcss-ls", "typos"]
 
-[[language]]
-name = "typescript"
-language-servers = ["typescript-language-server", "typos"]
+# [[language]]
+# name = "typescript"
+# language-servers = ["typescript-language-server", "typos"]
 
 [[language]]
 name = "go"

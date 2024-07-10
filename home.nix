@@ -27,6 +27,10 @@
   # xdg.configFile."bin".source = ../dots/bin;
 
   programs = {
+    vscode = {
+      enable = true;
+      package = pkgs.vscode.fhs;
+    };
     direnv = {
       enable = true;
       #     enableBashIntegration = true;
