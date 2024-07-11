@@ -10,9 +10,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager, vscode-server }:
     let
       user = "walke";
     in
@@ -23,6 +24,7 @@
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
+            vscode-server.homeModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -31,7 +33,9 @@
                 inherit user;
               };
               home-manager.users.${user} = {
-                imports = [ (import ./home.nix) ];
+                imports = [
+                  (import ./home.nix)
+                ];
               };
             }
           ];
