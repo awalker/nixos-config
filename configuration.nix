@@ -247,6 +247,7 @@ in
     wget
     zoxide
     nodejs_20
+    typescript
     wl-clipboard
     bat
     du-dust
