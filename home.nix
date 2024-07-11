@@ -23,7 +23,7 @@
   # ++ [ (import ../modules/apps/firefox) ];
 
   programs.home-manager.enable = true;
-  # services.vscode-server.enable = true;
+  services.vscode-server.enable = true;
   # security.pam.sshAgentAuth.enable = true;
   # xdg.configFile."wallpapers".source = ../assets/wallpapers;
   # xdg.configFile."bin".source = ../dots/bin;
