@@ -11,8 +11,8 @@ set -gx EDITOR hx
 # set --export BUN_INSTALL "$HOME/.bun"
 # set --export PATH /home/adam/.local/share/bob/nvim-bin $PATH
 # set --export PATH $BUN_INSTALL/bin $PATH
-set --export NIX_LD /run/current-system/sw/share/nix-ld/lib/ld.so
-set --export NIX_LD_LIBRARY_PATH /run/current-system/sw/share/nix-ld/lib
+set -x NIX_LD /run/current-system/sw/share/nix-ld/lib/ld.so
+set -x NIX_LD_LIBRARY_PATH /run/current-system/sw/share/nix-ld/lib
 
 function fish_greeting
     freshfetch
