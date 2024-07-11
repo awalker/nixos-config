@@ -11,7 +11,7 @@
     nixpkgs-fmt
 
     # js/ts etc
-    nodePackages_latest.typescript
+    typescript
     nodePackages_latest.typescript-language-server
     nodePackages_latest.svelte-language-server
     vscode-langservers-extracted
