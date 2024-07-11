@@ -362,3 +362,10 @@ in
   system.stateVersion = "23.05"; # Did you read the comment?
 
 }
+{
+  imports = [
+    (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
+  ];
+
+  services.vscode-server.enable = true;
+}
