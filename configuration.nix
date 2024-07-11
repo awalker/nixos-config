@@ -36,6 +36,8 @@ in
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
+    stdenv.cc.cc
+    openssl
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -333,7 +335,7 @@ in
     settings = {
       PasswordAuthentication = true;
       AllowUsers = ["walke"];
-      UseDns = true;
+      UseDns = false;
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password";
     };
