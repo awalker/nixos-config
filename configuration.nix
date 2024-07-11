@@ -248,7 +248,8 @@ in
     qemu
     wget
     zoxide
-    nodejs_20
+    # nodejs_20
+    nodejs_18
     typescript
     wl-clipboard
     bat
