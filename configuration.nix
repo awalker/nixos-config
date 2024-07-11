@@ -339,6 +339,7 @@ in
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password";
     };
+    extraConfig = "AllowStreamLocalForwarding true";
   };
   # programs.ssh.enable = true;
   programs.ssh.startAgent = true;
