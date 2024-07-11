@@ -6,6 +6,7 @@
 }: {
   imports = [ (import ./neovim) ]
     ++ [ (import ./helix) ]
+    ++ [ (import ./vscode) ]
     ++ [ (import ./yazi) ];
   # ++ [ (import ../modules/dev/git) ]
   # ++ [ (import ../modules/dev/kitty) ]
