@@ -6,6 +6,7 @@
 }: {
   imports = [ (import ./neovim) ]
     ++ [ (import ./helix) ]
+    ++ [ "${fetchTarball "https://github.com/msteen/nixos-vscode-server/tarball/master"}/modules/vscode-server/home.nix" ]
     ++ [ (import ./yazi) ];
   # ++ [ (import ../modules/dev/git) ]
   # ++ [ (import ../modules/dev/kitty) ]
@@ -22,6 +23,7 @@
   # ++ [ (import ../modules/apps/firefox) ];
 
   programs.home-manager.enable = true;
+  services.vscode-server.enable = true;
   # security.pam.sshAgentAuth.enable = true;
   # xdg.configFile."wallpapers".source = ../assets/wallpapers;
   # xdg.configFile."bin".source = ../dots/bin;
