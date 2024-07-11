@@ -25,9 +25,11 @@
           modules = [
             ./configuration.nix
             vscode-server.homeModules.default
-            home-manager.nixosModules.home-manager
             {
               services.vscode-server.enable = true;
+            }
+            home-manager.nixosModules.home-manager
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
