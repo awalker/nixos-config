@@ -158,6 +158,7 @@
       bluetuith
       steam
       steam-run
+      libgcc.lib
       wlsunset
       freshfetch
       starship
