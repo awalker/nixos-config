@@ -233,6 +233,7 @@ in
     })
     )
     lf
+    libgcc
     eza
     zellij
     rofi-wayland
