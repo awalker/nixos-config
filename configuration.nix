@@ -38,6 +38,7 @@ in
     # here, NOT in environment.systemPackages
     stdenv.cc.cc
     openssl
+    libgcc.lib
   ];
 
   nixpkgs.config.permittedInsecurePackages = [

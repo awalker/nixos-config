@@ -12,8 +12,9 @@
     };
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
+  inputs.nix-alien.url = "github:thiagokokada/nix-alien";
 
-  outputs = { self, nixpkgs, home-manager, vscode-server }:
+  outputs = { self, nixpkgs, home-manager, vscode-server, nix-alien }:
     let
       user = "walke";
     in

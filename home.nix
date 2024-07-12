@@ -6,8 +6,6 @@
 }: {
   imports = [ (import ./neovim) ]
     ++ [ (import ./helix) ]
-    # ++ [ "${fetchTarball "https://github.com/msteen/nixos-vscode-server/tarball/master"}/modules/vscode-server/home.nix" ]
-    ++ [ (import ./alien) ]
     ++ [ (import ./yazi) ];
   # ++ [ (import ../modules/dev/git) ]
   # ++ [ (import ../modules/dev/kitty) ]
@@ -149,6 +147,7 @@
 
     packages = with pkgs; [
       home-manager
+      # self.inputs.nix-alien.packager.${systen}.nix-alien
       dconf
       nano
       firefox
