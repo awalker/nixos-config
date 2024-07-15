@@ -330,6 +330,7 @@ in
   # };
 
   # List services that you want to enable:
+  services.meshcentral.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh = {
