@@ -110,7 +110,7 @@
 
   services.kdeconnect = {
     enable = true;
-    package = pkgs.kdePackages.kceconnect-kde;
+    # package = pkgs.kdePackages.kceconnect-kde;
     indicator = true;
   };
 
