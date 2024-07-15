@@ -108,12 +108,6 @@
     };
   };
 
-  services.kdeconnect = {
-    enable = true;
-    # package = pkgs.kdePackages.kceconnect-kde;
-    indicator = true;
-  };
-
   gtk.enable = true;
   gtk.font.name = "Noto Sans";
   gtk.font.package = pkgs.noto-fonts;
