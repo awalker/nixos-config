@@ -221,6 +221,7 @@
       zed-editor
       csview
       wayvnc
+      plasticity
       #"github:mirrexagon/nixpkgs-esp-dev#esp32-id"
     ];
     stateVersion = "23.05";
