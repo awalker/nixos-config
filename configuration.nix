@@ -17,6 +17,11 @@ in
 {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nix.gc = {
+    automatic = true;
+    randomizedDelaySec = "14m";
+    options = "--delete-older-than 10d";
+  };
 
   imports =
     [
@@ -59,12 +64,12 @@ in
   services.flatpak.enable = true;
   services = {
     syncthing = {
-        enable = true;
-        user = "walke";
-        dataDir = "/home/walke/Documents";    # Default folder for new synced folders
-        configDir = "/home/walke/.config/syncthing";   # Folder for Syncthing's settings and keys
+      enable = true;
+      user = "walke";
+      dataDir = "/home/walke/Documents"; # Default folder for new synced folders
+      configDir = "/home/walke/.config/syncthing"; # Folder for Syncthing's settings and keys
     };
-};
+  };
 
   virtualisation.docker.enable = true;
   programs.hyprland = {
@@ -332,21 +337,21 @@ in
   # };
 
   # List services that you want to enable:
-# services.xserver.enable = true;
-# services.xserver.displayManager.sddm.enable = true;
-# services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
-# services.xrdp.enable = true;
-# services.xrdp.defaultWindowManager = "Hyprland";
-# services.xrdp.openFirewall = true;
+  # services.xrdp.enable = true;
+  # services.xrdp.defaultWindowManager = "Hyprland";
+  # services.xrdp.openFirewall = true;
 
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    ports = [22];
+    ports = [ 22 ];
     settings = {
       PasswordAuthentication = true;
-      AllowUsers = ["walke"];
+      AllowUsers = [ "walke" ];
       UseDns = false;
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password";

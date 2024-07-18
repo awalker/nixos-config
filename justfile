@@ -9,3 +9,6 @@ sync:
 update: sync && sync-switch
 	sudo nix-channel --update
 	sudo nix flake update
+
+clean:
+	nix-collect-garbage -d
