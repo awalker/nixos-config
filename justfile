@@ -1,5 +1,7 @@
 sync-switch: sync switch
 
+ss: sync-switch
+
 switch:
 	sudo nixos-rebuild  --flake .#odin switch
 

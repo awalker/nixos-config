@@ -6,15 +6,18 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+    nixpkgs-stable = {
+      url = "github:NixOS/nixpkgs/nixos-24.05";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
-  inputs.nix-alien.url = "github:thiagokokada/nix-alien";
+  # inputs.nix-alien.url = "github:thiagokokada/nix-alien";
 
-  outputs = { self, nixpkgs, home-manager, vscode-server, nix-alien }:
+  outputs = { self, nixpkgs, home-manager, vscode-server, nixpkgs-stable }:
     let
       user = "walke";
     in
@@ -35,6 +38,11 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = {
                 inherit user;
+                system = "x86_64-linux";
+                pkgs-stable = import nixpkgs-stable {
+                  system = "x86_64-linux";
+                  # inherit system;
+                };
               };
               home-manager.users.${user} = {
                 imports = [

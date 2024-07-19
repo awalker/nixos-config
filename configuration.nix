@@ -17,12 +17,6 @@ in
 {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nix.gc = {
-    automatic = true;
-    randomizedDelaySec = "14m";
-    options = "--delete-older-than 10d";
-  };
-
   imports =
     [
       # Include the results of the hardware scan.
@@ -32,6 +26,12 @@ in
 
   nix = {
     package = pkgs.nixFlakes;
+    gc = {
+      automatic = true;
+      randomizedDelaySec = "14m";
+      options = "--delete-older-than 10d";
+    };
+
     extraOptions = ''
       		  experimental-features = nix-command flakes
       		  '';
@@ -232,7 +232,6 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # waybar
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     })
@@ -247,15 +246,12 @@ in
     libnotify
     swaynotificationcenter
     alacritty
-    # kitty
-    # go_1_21
     rustup
     gimp
     git
     qemu
     wget
     zoxide
-    # nodejs_20
     nodejs_18
     typescript
     wl-clipboard
@@ -263,28 +259,21 @@ in
     du-dust
     bottom
     htop
-    # ripgrep-all
     fzf
     swww
     webkitgtk
-    # openconnect_unstable
     vpnc-scripts
-    # gnome.networkmanager-openconnect
-    # gp-saml-gui
     libnma
     wireplumber
     playerctl
     wlogout
     killall
     zig
-    # xdg-desktop-portal-gtk
     ripgrep
-    # greetd.tuigreet
     polkit_gnome
     gnome-keyring
     adwaita-icon-theme
     docker
-    # bluez
     theme-obsidian2
     juno-theme
     papirus-icon-theme
@@ -308,7 +297,7 @@ in
     libnma-gtk4
     gnome.networkmanager-openconnect
     gtklock
-    localsend
+    # localsend
   ];
 
   fonts.packages = with pkgs; [

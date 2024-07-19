@@ -1,6 +1,7 @@
 { config
 , lib
 , pkgs
+, pkgs-stable
 , user
 , ...
 }: {
@@ -22,6 +23,11 @@
   # ++ [ (import ../modules/apps/firefox) ];
 
   programs.home-manager.enable = true;
+  # programs.orca-slicer = {
+  #   enable = true;
+  #   package = pkgs-stable.orca-slicer;
+  # };
+
   # services.vscode-server.enable = true;
   # security.pam.sshAgentAuth.enable = true;
   # xdg.configFile."wallpapers".source = ../assets/wallpapers;
@@ -145,6 +151,7 @@
     #   recursive = true;
     # };
 
+
     packages = with pkgs; [
       home-manager
       # self.inputs.nix-alien.packager.${systen}.nix-alien
@@ -200,8 +207,8 @@
       wob
       avizo
       unar
-      ironbar
-      orca-slicer
+      # ironbar
+      # orca-slicer
       mpv
       capitaine-cursors
       gleam
