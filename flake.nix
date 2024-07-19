@@ -41,6 +41,7 @@
                 system = "x86_64-linux";
                 pkgs-stable = import nixpkgs-stable {
                   system = "x86_64-linux";
+                  config.allowUnfree = true;
                   # inherit system;
                 };
               };

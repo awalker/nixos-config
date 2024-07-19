@@ -208,7 +208,8 @@
       avizo
       unar
       # ironbar
-      # orca-slicer
+      orca-slicer
+      # pkgs-stable.orca-slicer
       mpv
       capitaine-cursors
       gleam
