@@ -231,7 +231,7 @@
       wayvnc
       plasticity
       thunderbird
-      # btop
+      btop
       #"github:mirrexagon/nixpkgs-esp-dev#esp32-id"
     ];
     stateVersion = "23.05";
