@@ -50,14 +50,16 @@ in
     "python3.10-requests-2.28.2"
     "python3.10-cryptography-40.0.1"
   ];
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
-      };
-    };
-  };
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
+  #     };
+  #   };
+  # };
+  services.desktopManager.cosmic.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
   services.devmon.enable = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
