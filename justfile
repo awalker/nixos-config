@@ -6,6 +6,9 @@ switch:
 	# sudo nixos-rebuild -j 1 --flake .#odin switch
 	sudo nixos-rebuild --flake .#odin switch
 
+boot:
+	sudo nixos-rebuild --flake .#odin boot
+
 sync:
 	git-sync sync
 
