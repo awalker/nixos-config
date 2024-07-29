@@ -14,14 +14,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vscode-server.url = "github:nix-community/nixos-vscode-server";
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixos-cosmic = {
+    #   url = "github:lilyinstarlight/nixos-cosmic";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
   # inputs.nix-alien.url = "github:thiagokokada/nix-alien";
 
-  outputs = { self, nixpkgs, home-manager, vscode-server, nixpkgs-stable, nixos-cosmic }:
+  outputs = { self, nixpkgs, home-manager, vscode-server, nixpkgs-stable}:
     let
       user = "walke";
     in
@@ -31,13 +31,13 @@
           specialArgs = { inherit user; };
           system = "x86_64-linux";
           modules = [
-            {
-              nix.settings = {
-                substituters = [ "https://cosmic.cachix.org/" ];
-                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-              };
-            }
-            nixos-cosmic.nixosModules.default
+            # {
+            #   nix.settings = {
+            #     substituters = [ "https://cosmic.cachix.org/" ];
+            #     trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+            #   };
+            # }
+            # nixos-cosmic.nixosModules.default
             ./configuration.nix
             vscode-server.nixosModules.default
             ({ config, pkgs, ... }: {
