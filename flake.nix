@@ -21,7 +21,7 @@
   };
   # inputs.nix-alien.url = "github:thiagokokada/nix-alien";
 
-  outputs = { self, nixpkgs, home-manager, vscode-server, nixpkgs-stable}:
+  outputs = { self, nixpkgs, home-manager, vscode-server, nixpkgs-stable }:
     let
       user = "walke";
     in
@@ -47,6 +47,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backups";
               home-manager.extraSpecialArgs = {
                 inherit user;
                 system = "x86_64-linux";
