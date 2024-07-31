@@ -6,8 +6,8 @@
 , ...
 }: {
   imports = [ (import ./neovim) ]
-    ++ [ (import ./helix) ];
-    # ++ [ (import ./yazi) ];
+    ++ [ (import ./helix) ]
+    ++ [ (import ./yazi) ];
   # ++ [ (import ../modules/dev/git) ]
   # ++ [ (import ../modules/dev/kitty) ]
   # ++ [ (import ../modules/dev/starship) ]
@@ -58,10 +58,6 @@
       enable = true;
     };
     zellij.enableFishIntegration = true;
-    yazi = {
-      enable = true;
-      # enableFishIntegration = true;
-    };
     fish = {
       enable = true;
       shellAbbrs = {
