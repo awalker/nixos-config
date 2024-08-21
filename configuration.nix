@@ -220,7 +220,7 @@ in
     isNormalUser = true;
     shell = pkgs.fish;
     description = "Adam Walker";
-    extraGroups = [ "networkmanager" "wheel" "docker" "storage" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "storage" "plugdev" ];
     packages = with pkgs; [
       home-manager
     ];
