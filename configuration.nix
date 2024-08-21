@@ -107,6 +107,9 @@ in
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.blacklistedKernelModules = [
+    "dv_usb_rtl128xxu"
+  ];
 
   # services.xserver.enable = true;
   # services.xserver.displayManager.gdm.enable = true;
