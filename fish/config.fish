@@ -15,7 +15,7 @@ set -gx NIX_LD /run/current-system/sw/share/nix-ld/lib/ld.so
 set -gx NIX_LD_LIBRARY_PATH /run/current-system/sw/share/nix-ld/lib
 
 function fish_greeting
-    freshfetch
+    fastfetch
 end
 
 zoxide init fish | source

@@ -67,7 +67,7 @@
         set -gx PATH "$HOME/.local/bin" "$HOME/go/bin" $PATH
         set -gx EDITOR hx
         function fish_greeting
-            freshfetch
+            fastfetch
         end
 
         set -Ux SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent
@@ -167,7 +167,7 @@
       steam-run
       libgcc.lib
       wlsunset
-      freshfetch
+      fastfetch
       starship
       networkmanagerapplet
       networkmanager_dmenu
