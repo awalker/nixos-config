@@ -21,7 +21,7 @@
   };
   # inputs.nix-alien.url = "github:thiagokokada/nix-alien";
 
-  outputs = { self, nixpkgs, home-manager, vscode-server, nixpkgs-stable }:
+  outputs = { self, nixpkgs, home-manager, vscode-server, nixpkgs-stable, nixos-cosmic }:
     let
       user = "walke";
     in
