@@ -301,7 +301,7 @@ in
     go_1_22
     openconnect
     libnma-gtk4
-    gnome.networkmanager-openconnect
+    networkmanager-openconnect
     gtklock
     # localsend
   ];
